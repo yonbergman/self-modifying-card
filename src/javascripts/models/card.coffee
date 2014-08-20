@@ -2,10 +2,11 @@ class App.Models.Card extends Backbone.Model
   defaults:
     side: 'corp'
     faction: 'neutral'
+    kind: 'ice'
 
   @SIDES: ['corp', 'runner']
   @FACTIONS: {
-   corp: ['neutral', 'weyland', 'haas-bioroid', 'jinteki', 'nbn'],
+   corp: ['neutral', 'weyland', 'haas', 'jinteki', 'nbn'],
    runner: ['neutral', 'anarch', 'criminal', 'shaper'],
   }
 
@@ -17,12 +18,15 @@ class App.Models.Card extends Backbone.Model
   factionsForSide: ->
     App.Models.Card.FACTIONS[@get('side')]
 
+  kindsForSide: ->
+    App.Models.Card.KINDS[@get('side')]
+
   isRunner: ->
     @get('side') == 'runner'
 
 
   image: ->
-    if @get('side') == 'runner'
-      '/img/runner-back.jpg'
+    if @get('kind')
+      "/img/#{@get('kind')}/#{@get('kind')}_#{@get('faction')}.jpg"
     else
-      '/img/corp-back.jpg'
+      "/img/#{@get('side')}-back.jpg"

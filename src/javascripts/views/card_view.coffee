@@ -6,7 +6,15 @@ class App.Views.CardView extends View
   @content: (params) ->
     @div =>
       @h2 "Card Preview"
-      @img src: params.model.image()
+      @div class: "card #{params.model.get('kind')}", =>
+        @img src: params.model.image()
+        @div class: 'name', 'Name'
+        @div class: 'price', '3'
+        @div class: 'strength', '2'
+        @div class: 'type', 'strong'
+        @div class: 'main-content', =>
+          @div class: 'text', 'Does cool things'
+          @div class: 'fluff', 'becuase we can'
 
   changeSide: (ev, el) ->
     @model.set(side: el.text(), faction: 'neutral')

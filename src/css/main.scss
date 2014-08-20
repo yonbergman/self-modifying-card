@@ -7,3 +7,218 @@ body{
   background: white;
 
 }
+
+
+.card {
+  position: relative;
+  > div{
+    position: absolute;
+  }
+
+
+  &.agenda{
+    .price, .strength {
+      -webkit-text-stroke: 1px black;
+      text-shadow: 1px 1px black;
+      font-size: 31px;
+      font-weight: bold;
+      color: white;
+    }
+    .name{
+      top: 22px;
+      left: 22px;
+      font-weight: normal;
+      font-size: 18px;
+    }
+    .price{
+      top: 13px;
+      left: 273px;
+      text-align: center;
+    }
+    .strength{
+      top: 220px;
+      left: 25px;
+      text-align: center;
+    }
+    .type{
+      top: 279px;
+      left: 95px;
+      font-weight: normal;
+      font-size: 16px;
+      text-align: left;
+    }
+    .main-content{
+      top: 306px;
+      left: 33px;
+      font-weight: normal;
+      font-size: 14px;
+      text-align: left;
+      .fluff{
+        font-style: italic;
+      }
+    }
+  }
+
+  &.operation{
+    .name{
+      top: 12px;
+      left: 79px;
+      font-size: 20px;
+      font-weight: normal;
+    }
+    .price{
+      top: 23px;
+      left: 31px;
+      font-weight: normal;
+      font-size: 25px;
+      text-align: center;
+      color: white;
+    }
+    .strength{
+      display: none;
+    }
+    .type{
+      top: 259px;
+      left: 114px;
+      font-weight: normal;
+      font-size: 16px;
+      text-align: left;
+    }
+    .main-content{
+      top: 293px;
+      left: 33px;
+      font-weight: normal;
+      font-size: 14px;
+      text-align: left;
+      .fluff{
+        font-style: italic;
+      }
+    }
+  }
+
+  &.upgrade{
+    .name{
+      top: 226px;
+      left: 31px;
+      font-size: 18px;
+      font-weight: normal;
+    }
+    .price{
+      top: 29px;
+      left: 31px;
+      font-weight: normal;
+      font-size: 25px;
+      text-align: center;
+      color: white;
+    }
+    .strength{
+      top: 369px;
+      left: 277px;
+      font-weight: bold;
+      font-size: 24px;
+      text-align: center;
+    }
+    .type{
+      top: 254px;
+      left: 107px;
+      font-weight: normal;
+      font-size: 16px;
+      text-align: left;
+    }
+    .main-content{
+      top: 283px;
+      left: 41px;
+      font-weight: normal;
+      font-size: 14px;
+      text-align: left;
+      .fluff{
+        font-style: italic;
+      }
+    }
+  }
+
+
+  &.asset{
+    .name{
+      top: 222px;
+      left: 35px;
+      font-weight: normal;
+    }
+    .price{
+      top: 22px;
+      left: 28px;
+      font-weight: normal;
+      font-size: 25px;
+      text-align: center;
+      color: white;
+    }
+    .strength{
+      top: 364px;
+      left: 273px;
+      font-weight: bold;
+      font-size: 24px;
+      text-align: center;
+    }
+    .type{
+      top: 250px;
+      left: 89px;
+      font-weight: normal;
+      font-size: 16px;
+      text-align: left;
+    }
+    .main-content{
+      top: 280px;
+      left: 33px;
+      font-weight: normal;
+      font-size: 14px;
+      text-align: left;
+      .fluff{
+        font-style: italic;
+      }
+    }
+  }
+
+  &.ice{
+    .name{
+      top: 18px;
+      left: 70px;
+      font-size: 18px;
+      font-weight: normal;
+    }
+    .price{
+      top: 26px;
+      left: 30px;
+      font-weight: normal;
+      font-size: 25px;
+      text-align: center;
+      color: white;
+    }
+    .strength{
+      transform: rotate(-90deg);
+      text-align: right;
+      top: 396px;
+      left: 14px;
+      font-weight: bold;
+      font-size: 24px;
+    }
+    .type{
+      transform: rotate(-90deg);
+      text-align: right;
+      top: 94px;
+      left: 5px;
+      font-weight: normal;
+      font-size: 16px;
+    }
+    .main-content{
+      top: 65px;
+      left: 64px;
+      font-weight: normal;
+      font-size: 14px;
+      text-align: left;
+      .fluff{
+        font-style: italic;
+      }
+    }
+  }
+
+}

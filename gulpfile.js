@@ -7,6 +7,8 @@ var sourcemaps = require('gulp-sourcemaps');
 var del = require('del');
 var sass = require('gulp-ruby-sass');
 var rimraf = require('rimraf');
+var clean = require('gulp-clean');
+
 
 var paths = {
     scripts: ['src/javascripts/**/*.coffee'],
@@ -28,6 +30,8 @@ var dest = {
 gulp.task('clean', function(cb) {
     // You can use multiple globbing patterns as you would with `gulp.src`
     rimraf(dest.root, cb);
+//    gulp.src([dest.root], {read: false})
+//        .pipe(clean());
 });
 
 gulp.task('scripts', function() {
@@ -77,4 +81,6 @@ gulp.task('watch', function() {
 });
 
 // The default task (called when you run `gulp` from cli)
-gulp.task('default', ['watch', 'clean','vendorScripts', 'scripts', 'images', 'sass', 'html']);
+gulp.task('default', ['clean'], function(){
+    gulp.start(['watch','vendorScripts', 'scripts', 'images', 'sass', 'html']);
+});
