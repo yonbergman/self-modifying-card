@@ -3,30 +3,34 @@ class App.Models.Card extends Backbone.Model
     side: 'corp'
     faction: 'neutral'
     kind: 'agenda'
+    name: 'Sample Card'
+    price: '3'
+    strength: '2'
+    type: 'strong - stealth'
+    text: 'If Snare! is accessed from R&D, the Runner must reveal it.'
+    fluff: 'It\'s bite is worse than it\'s bark'
 
-  @SIDES: ['corp', 'runner']
-  @FACTIONS: {
-   corp: ['neutral', 'weyland', 'haas', 'jinteki', 'nbn'],
-   runner: ['neutral', 'anarch', 'criminal', 'shaper'],
-  }
+  options:
+    side: ['corp', 'runner']
+    faction:
+      corp: ['neutral', 'weyland', 'haas', 'jinteki', 'nbn'],
+      runner: ['neutral', 'anarch', 'criminal', 'shaper'],
+    kind:
+      corp: ['agenda', 'asset', 'operation', 'upgrade', 'ice'],
+      runner: ['event', 'hardware', 'program', 'resource'],
 
-  @KINDS: {
-    corp: ['identity', 'agenda', 'asset', 'operation', 'upgrade', 'ice'],
-    runner: ['identity', 'event', 'hardware', 'program', 'resource'],
-  }
-
-  factionsForSide: ->
-    App.Models.Card.FACTIONS[@get('side')]
-
-  kindsForSide: ->
-    App.Models.Card.KINDS[@get('side')]
+  @strengthMeaning:
+    agenda: 'Agenda Points'
+    asset: 'Trash Cost'
+    upgrade: 'Trash Cost'
+    ice: 'Strength'
 
   isRunner: ->
     @get('side') == 'runner'
-
 
   image: ->
     if @get('kind')
       "/img/#{@get('kind')}/#{@get('kind')}_#{@get('faction')}.png"
     else
       "/img/#{@get('side')}-back.jpg"
+
