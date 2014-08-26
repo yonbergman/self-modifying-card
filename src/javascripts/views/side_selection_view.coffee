@@ -7,7 +7,7 @@ class App.Views.SideSelectionView extends App.Views.SelectionView
   refresh: =>
     @updateSelections()
     @render()
-    
+
   updateSelections: =>
     super
     @options.selections = @options.selections[@model.get('side')]
