@@ -2,7 +2,7 @@ class App.Models.Card extends Backbone.Model
   defaults:
     side: 'corp'
     faction: 'neutral'
-    kind: 'ice'
+    kind: 'agenda'
 
   @SIDES: ['corp', 'runner']
   @FACTIONS: {
@@ -27,6 +27,6 @@ class App.Models.Card extends Backbone.Model
 
   image: ->
     if @get('kind')
-      "/img/#{@get('kind')}/#{@get('kind')}_#{@get('faction')}.jpg"
+      "/img/#{@get('kind')}/#{@get('kind')}_#{@get('faction')}.png"
     else
       "/img/#{@get('side')}-back.jpg"

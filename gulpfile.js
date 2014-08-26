@@ -56,7 +56,7 @@ gulp.task('vendorScripts', function() {
 gulp.task('images', function() {
     return gulp.src(paths.images)
         // Pass in options to the task
-        .pipe(imagemin({optimizationLevel: 5}))
+//        .pipe(imagemin({optimizationLevel: 5}))
         .pipe(gulp.dest(dest.imgs));
 });
 
