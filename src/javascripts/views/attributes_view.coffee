@@ -39,6 +39,12 @@ class App.Views.AttributesView extends Backbone.View
       <textarea id="fluff" class="form-control"/>
     </div>
   </div>
+  <div class="form-group upload">
+    <label for="image" class="col-sm-3 control-label">Image:</label>
+    <div class="col-sm-9">
+      <input type="file" id="image' class='form-control">
+    </div>
+  </div>
 </form>
 """)
 
@@ -48,13 +54,25 @@ class App.Views.AttributesView extends Backbone.View
   events:
     'keyup input': 'updateContent'
     'keyup textarea': 'updateContent'
+    'change .upload input': 'imageReady'
 
   render: =>
     @$el.html(@template(@model.attributes))
     @$el.find("input, textarea").each (idx, el) =>
       $(el).val(@model.get(el.id))
+    @$el.find('.strength').hide() unless @hasStrength()
     @
+
+  hasStrength: =>
+    App.Models.Card.strengthMeaning[@model.get('kind')]
 
   updateContent: (ev) =>
     el = $(ev.target)
     @model.set(el.get(0).id, el.val())
+
+  imageReady: (ev) =>
+    selectedFile = event.target.files[0];
+    reader = new FileReader();
+    reader.onload = =>
+      @model.set('img', reader.result)
+    reader.readAsDataURL(selectedFile)
