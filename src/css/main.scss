@@ -1,3 +1,27 @@
+@mixin numbers(){
+  font-family: 'Orbitron', sans-serif;
+}
+@mixin title(){
+  font-family: 'Cinzel', serif;
+  text-transform: capitalize;
+}
+@mixin type(){
+  font-family: 'Lato', sans-serif;
+  text-transform: capitalize;
+}
+@mixin text(){
+  font-family: 'Noto Serif', serif;
+  text-transform: capitalize;
+}
+
+@mixin trash(){
+  font-weight: bold;
+  font-family: 'Arial', san-serif;
+  font-size: 26px;
+  transform: scale(0.8, 1);
+  color: #988b7f;
+}
+
 html, body{
   margin: 0;
   padding: 0;
@@ -5,7 +29,6 @@ html, body{
 
 body{
   background: white;
-
 }
 
 
@@ -15,24 +38,37 @@ body{
     position: absolute;
   }
 
+  .price, .strength{
+    @include numbers();
+  }
+  .name {
+    @include title();
+  }
+  .type{
+    @include type();
+  }
+  .main-content{
+    @include text();
+    .fluff {
+      font-style: italic;
+      font-size: 12px;
+    }
+  }
 
   &.agenda{
     .price, .strength {
-      -webkit-text-stroke: 1px black;
-      text-shadow: 1px 1px black;
+      text-shadow: 0 1px black,1px 1px black,-1px 1px black,0 -1px black, 1px -1px black,-1px -1px black, 3px 3px black;
       font-size: 31px;
       font-weight: bold;
       color: white;
     }
     .name{
-      top: 22px;
+      top: 24px;
       left: 22px;
-      font-weight: normal;
-      font-size: 18px;
     }
     .price{
-      top: 13px;
-      left: 273px;
+      top: 14px;
+      left: 270px;
       text-align: center;
     }
     .strength{
@@ -53,24 +89,18 @@ body{
       font-weight: normal;
       font-size: 14px;
       text-align: left;
-      .fluff{
-        font-style: italic;
-      }
     }
   }
 
   &.operation{
     .name{
-      top: 12px;
+      top: 14px;
       left: 79px;
-      font-size: 20px;
-      font-weight: normal;
     }
     .price{
-      top: 23px;
-      left: 31px;
-      font-weight: normal;
-      font-size: 25px;
+      top: 30px;
+      left: 30px;
+      font-size: 20px;
       text-align: center;
       color: white;
     }
@@ -90,33 +120,27 @@ body{
       font-weight: normal;
       font-size: 14px;
       text-align: left;
-      .fluff{
-        font-style: italic;
-      }
     }
   }
 
   &.upgrade{
     .name{
-      top: 226px;
+      top: 229px;
       left: 31px;
-      font-size: 18px;
       font-weight: normal;
     }
     .price{
-      top: 29px;
-      left: 31px;
-      font-weight: normal;
-      font-size: 25px;
+      top: 35px;
+      left: 30px;
+      font-size: 20px;
       text-align: center;
       color: white;
     }
     .strength{
-      top: 369px;
-      left: 277px;
-      font-weight: bold;
-      font-size: 24px;
+      top: 368px;
+      left: 276px;
       text-align: center;
+      @include trash();
     }
     .type{
       top: 254px;
@@ -131,9 +155,6 @@ body{
       font-weight: normal;
       font-size: 14px;
       text-align: left;
-      .fluff{
-        font-style: italic;
-      }
     }
   }
 
@@ -145,19 +166,17 @@ body{
       font-weight: normal;
     }
     .price{
-      top: 22px;
-      left: 28px;
-      font-weight: normal;
-      font-size: 25px;
+      top: 29px;
+      left: 30px;
+      font-size: 20px;
       text-align: center;
       color: white;
     }
     .strength{
       top: 364px;
-      left: 273px;
-      font-weight: bold;
-      font-size: 24px;
+      left: 271px;
       text-align: center;
+      @include trash();
     }
     .type{
       top: 250px;
@@ -172,24 +191,18 @@ body{
       font-weight: normal;
       font-size: 14px;
       text-align: left;
-      .fluff{
-        font-style: italic;
-      }
     }
   }
 
   &.ice{
     .name{
-      top: 18px;
+      top: 20px;
       left: 70px;
-      font-size: 18px;
-      font-weight: normal;
     }
     .price{
-      top: 26px;
-      left: 30px;
-      font-weight: normal;
-      font-size: 25px;
+      top: 30px;
+      left: 29px;
+      font-size: 20px;
       text-align: center;
       color: white;
     }
@@ -202,12 +215,23 @@ body{
       font-size: 24px;
     }
     .type{
-      transform: rotate(-90deg);
       text-align: right;
-      top: 94px;
-      left: 5px;
       font-weight: normal;
       font-size: 16px;
+      top: 81px;
+      left: 16px;
+      transform-origin: top right;
+      transform: translate(-100%,0) rotate(-90deg);
+      &:before{
+        content: '';
+        background-image: url('/img/ice.png');
+        width: 43px;
+        height: 46px;
+        position: absolute;
+        transform: rotate(90deg);
+        left: -44px;
+        top: -9px;
+      }
     }
     .main-content{
       top: 65px;
@@ -215,9 +239,6 @@ body{
       font-weight: normal;
       font-size: 14px;
       text-align: left;
-      .fluff{
-        font-style: italic;
-      }
     }
   }
 
