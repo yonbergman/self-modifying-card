@@ -250,16 +250,10 @@ body{
       left: 16px;
       transform-origin: top right;
       transform: translate(-100%,0) rotate(-90deg);
-      &:before{
-        content: '';
-        background-image: url('/img/ice.png');
-        width: 43px;
-        height: 46px;
-        position: absolute;
-        transform: rotate(90deg);
-        left: -44px;
-        top: -9px;
-      }
+      background-image: url('/img/ice.png');
+      background-position: 0 -7px;
+      background-repeat: no-repeat;
+      padding-left: 46px;
     }
     .main-content{
       top: 65px;

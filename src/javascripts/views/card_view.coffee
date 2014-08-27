@@ -41,6 +41,8 @@ class App.Views.CardView extends Backbone.View
       @$el.find(".#{attr}").text(@model.get(attr))
 
     @$el.find('.name').text('◆ ' + @model.get('name')) if @model.isUnique()
+    typeEl = @$el.find('.type')
+    @$el.find('.ice').css(top: typeEl.position().top + typeEl.width())
     content = @$el.find(".text").text()
     @$el.find(".text").html(@iconify(content))
 
