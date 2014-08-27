@@ -19,6 +19,12 @@ class App.Views.AttributesView extends Backbone.View
     </div>
   </div>
   <div class="form-group">
+    <label for="influence" class="col-sm-3 control-label">Influence:</label>
+    <div class="col-sm-5">
+      <input type="number" class="form-control" id="influence" placeholder="Influence" min="0" max="5">
+    </div>
+  </div>
+  <div class="form-group">
     <label for="type" class="col-sm-3 control-label">Types:</label>
     <div class="col-sm-9">
       <input type="text" class="form-control" id="type" placeholder="Type">

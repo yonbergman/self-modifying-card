@@ -7,6 +7,7 @@ class App.Models.Card extends Backbone.Model
     name: 'Sample Card'
     price: '3'
     strength: '2'
+    influence: 2
     type: 'strong - stealth'
     text: 'If Snare! is accessed from R&D, the Runner must reveal it.'
     fluff: 'It\'s bite is worse than it\'s bark'

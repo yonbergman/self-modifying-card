@@ -66,6 +66,19 @@ body{
       font-size: 10px;
     }
   }
+  .influence{
+    background: url('/img/influence-pip.png');
+    width: 88px;
+    height: 16px;
+    background-repeat: repeat;
+    background-size: 17px;
+    &.i0{ width: 0;}
+    &.i1{ width: 18px;}
+    &.i2{ width: 32px;}
+    &.i3{ width: 51px;}
+    &.i4{ width: 68px;}
+    &.i5{ width: 88px;}
+  }
 
 
   &.agenda{
@@ -121,6 +134,10 @@ body{
       font-weight: normal;
       text-align: left;
     }
+    .influence{
+      bottom: 14px;
+      left: 44px;
+    }
   }
 
   &.operation{
@@ -150,6 +167,10 @@ body{
       left: 33px;
       font-weight: normal;
       text-align: left;
+    }
+    .influence{
+      bottom: 14px;
+      left: 45px;
     }
   }
 
@@ -185,6 +206,10 @@ body{
       font-weight: normal;
       text-align: left;
     }
+    .influence{
+      bottom: 12px;
+      left: 44px;
+    }
   }
 
 
@@ -219,6 +244,10 @@ body{
       left: 33px;
       font-weight: normal;
       text-align: left;
+    }
+    .influence{
+      bottom: 16px;
+      left: 44px;
     }
   }
 
@@ -261,6 +290,12 @@ body{
       font-weight: normal;
       text-align: left;
       width: 208px;
+    }
+    .influence{
+      transform-origin: bottom left;
+      transform: rotate(-90deg);
+      bottom: 52px;
+      left: 304px;
     }
   }
 

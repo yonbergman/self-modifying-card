@@ -43,6 +43,7 @@ class App.Views.CardView extends Backbone.View
     @$el.find('.name').text('◆ ' + @model.get('name')) if @model.isUnique()
     content = @$el.find(".text").text()
     @$el.find(".text").html(@iconify(content))
+    @$el.find('.influence').removeClass().addClass('influence').addClass("i#{@model.get('influence')}")
 
   iconify: (content) =>
     for className, finders of @icons
