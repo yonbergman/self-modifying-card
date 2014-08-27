@@ -4,6 +4,7 @@ class App.Controllers.CardBuilder
     window.model = @model
     @formView = new App.Views.FormView(model: @model)
     @cardView = new App.Views.CardView(model: @model)
+    @saveImageView = new App.Views.SaveImageView(model: @model)
 
 
 $(document).on 'ready', ->

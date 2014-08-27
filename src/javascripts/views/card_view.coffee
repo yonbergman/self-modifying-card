@@ -29,7 +29,7 @@ class App.Views.CardView extends Backbone.View
     for attr in ['name', 'price', 'strength', 'type', 'text', 'fluff']
       @$el.find(".#{attr}").text(@model.get(attr))
 
-  ## MOVING 
+  ## MOVING
   start: (ev) =>
     ev.preventDefault()
     @drag = true
@@ -56,5 +56,7 @@ class App.Views.CardView extends Backbone.View
   scale: (ev) =>
     ev.preventDefault()
     scale = if ev.originalEvent.wheelDelta > 0 then 1.2 else (1/1.2)
+    newScale = @model.get('scale') * scale
+    newScale = Math.max(Math.min(newScale, 3), 0.25)
     @model.set
-      scale: @model.get('scale') * scale
+      scale: newScale
