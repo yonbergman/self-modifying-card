@@ -31,7 +31,6 @@ class App.Views.CardView extends Backbone.View
     @$el.removeClass()
     @$el.addClass(@className)
     @$el.addClass(@model.get('kind'))
-    @$el.addClass('unique') if @model.isUnique()
     imgView = @$el.find('img')
     imgView.attr('src', @model.image())
     if @model.get('img')
@@ -40,6 +39,8 @@ class App.Views.CardView extends Backbone.View
     imgView.css('background-size': "#{@model.get('scale')*100}%")
     for attr in ['name', 'price', 'strength', 'type', 'text', 'fluff']
       @$el.find(".#{attr}").text(@model.get(attr))
+
+    @$el.find('.name').text('◆ ' + @model.get('name')) if @model.isUnique()
     content = @$el.find(".text").text()
     @$el.find(".text").html(@iconify(content))
 
