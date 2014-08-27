@@ -9,7 +9,5 @@ class App.Views.SaveImageView extends Backbone.View
   saveImage: (ev) =>
     html2canvas @$el.find('.card'),
       allowTaint: true
-      width: 100
-      height: 100
       onrendered: (canvas) ->
         $("body").append(canvas)
