@@ -18,7 +18,7 @@ class App.Views.AttributesView extends Backbone.View
       </div>
     </div>
   </div>
-  <div class="form-group">
+  <div class="form-group influence">
     <label for="influence" class="col-sm-3 control-label">Influence:</label>
     <div class="col-sm-5">
       <input type="number" class="form-control" id="influence" placeholder="Influence" min="0" max="5">
@@ -86,6 +86,7 @@ class App.Views.AttributesView extends Backbone.View
       $(el).val(@model.get(el.id))
     @$el.find('#unique').prop('checked', @model.get('unique'))
     @$el.find('.strength').hide() unless @hasStrength()
+    @$el.find('.influence').hide() unless @model.hasInfluence()
     @
 
   hasStrength: =>

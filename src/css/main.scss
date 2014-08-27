@@ -135,8 +135,15 @@ body{
       text-align: left;
     }
     .influence{
+      display: none;
       bottom: 14px;
       left: 44px;
+
+    }
+    &.neutral{
+      .influence{
+        display: block;
+      }
     }
   }
 

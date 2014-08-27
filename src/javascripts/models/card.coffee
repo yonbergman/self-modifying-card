@@ -33,6 +33,9 @@ class App.Models.Card extends Backbone.Model
   isUnique: ->
     !!@get('unique')
 
+  hasInfluence: ->
+    @get('kind')!='agenda' or @get('faction') == 'neutral'
+
   image: ->
     if @get('kind')
       "/img/#{@get('kind')}/#{@get('kind')}_#{@get('faction')}.png"
