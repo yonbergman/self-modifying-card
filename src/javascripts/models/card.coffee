@@ -3,6 +3,7 @@ class App.Models.Card extends Backbone.Model
     side: 'corp'
     faction: 'neutral'
     kind: 'agenda'
+    unique: false
     name: 'Sample Card'
     price: '3'
     strength: '2'
@@ -27,6 +28,9 @@ class App.Models.Card extends Backbone.Model
 
   isRunner: ->
     @get('side') == 'runner'
+
+  isUnique: ->
+    !!@get('unique')
 
   image: ->
     if @get('kind')

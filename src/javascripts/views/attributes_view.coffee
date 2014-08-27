@@ -10,6 +10,15 @@ class App.Views.AttributesView extends Backbone.View
     </div>
   </div>
   <div class="form-group">
+    <div class="col-sm-9 col-sm-offset-3">
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" id="unique"> Is Unique
+        </label>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
     <label for="type" class="col-sm-3 control-label">Types:</label>
     <div class="col-sm-9">
       <input type="text" class="form-control" id="type" placeholder="Type">
@@ -69,6 +78,7 @@ class App.Views.AttributesView extends Backbone.View
     @$el.html(@template(@model.attributes))
     @$el.find("input, textarea").each (idx, el) =>
       $(el).val(@model.get(el.id))
+    @$el.find('#unique').prop('checked', @model.get('unique'))
     @$el.find('.strength').hide() unless @hasStrength()
     @
 
@@ -77,7 +87,9 @@ class App.Views.AttributesView extends Backbone.View
 
   updateContent: (ev) =>
     el = $(ev.target)
-    @model.set(el.get(0).id, el.val())
+    val = el.val()
+    val = el.prop('checked') if el.attr('type') == 'checkbox'
+    @model.set(el.get(0).id, val)
 
   imageReady: (ev) =>
     selectedFile = event.target.files[0];

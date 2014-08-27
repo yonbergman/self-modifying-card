@@ -31,6 +31,7 @@ class App.Views.CardView extends Backbone.View
     @$el.removeClass()
     @$el.addClass(@className)
     @$el.addClass(@model.get('kind'))
+    @$el.addClass('unique') if @model.isUnique()
     imgView = @$el.find('img')
     imgView.attr('src', @model.image())
     if @model.get('img')
