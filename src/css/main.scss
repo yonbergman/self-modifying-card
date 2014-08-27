@@ -1,3 +1,5 @@
+@import './font.scss';
+
 @mixin numbers(){
   font-family: 'Orbitron', sans-serif;
 }
@@ -11,7 +13,6 @@
 }
 @mixin text(){
   font-family: 'Noto Serif', serif;
-  text-transform: capitalize;
 }
 
 @mixin trash(){
@@ -56,9 +57,10 @@ body{
   .main-content{
     width: 248px;
     @include text();
+    font-size: 13px;
     .fluff {
       font-style: italic;
-      font-size: 12px;
+      font-size: 10px;
     }
   }
 
@@ -94,7 +96,6 @@ body{
       top: 306px;
       left: 33px;
       font-weight: normal;
-      font-size: 14px;
       text-align: left;
     }
   }
@@ -125,7 +126,6 @@ body{
       top: 293px;
       left: 33px;
       font-weight: normal;
-      font-size: 14px;
       text-align: left;
     }
   }
@@ -160,7 +160,6 @@ body{
       top: 283px;
       left: 41px;
       font-weight: normal;
-      font-size: 14px;
       text-align: left;
     }
   }
@@ -196,7 +195,6 @@ body{
       top: 280px;
       left: 33px;
       font-weight: normal;
-      font-size: 14px;
       text-align: left;
     }
   }
@@ -244,7 +242,6 @@ body{
       top: 65px;
       left: 64px;
       font-weight: normal;
-      font-size: 14px;
       text-align: left;
       width: 208px;
     }

@@ -2,6 +2,17 @@ class App.Views.CardView extends Backbone.View
   className: 'card'
   el: '.card'
 
+  icons:
+    credit: ['[credit]', '[cr]', '[c]']
+    click: ['[click]']
+    link: ['[link]']
+    trash: ['[trash]']
+    mu: ['[mu]']
+    '1mu': ['[1mu]']
+    '2mu': ['[2mu]']
+    subroutine: ['[subroutine]', '[sub]','--->','-->','->']
+    'recurring-credit': ['[recurring]']
+
   events:
     'mousedown': 'start'
     'mousemove': 'move'
@@ -28,6 +39,17 @@ class App.Views.CardView extends Backbone.View
     imgView.css('background-size': "#{@model.get('scale')*100}%")
     for attr in ['name', 'price', 'strength', 'type', 'text', 'fluff']
       @$el.find(".#{attr}").text(@model.get(attr))
+    content = @$el.find(".text").text()
+    @$el.find(".text").html(@iconify(content))
+
+  iconify: (content) =>
+    for className, finders of @icons
+      for finder in finders
+        content = content.replace(@reg(finder), "<i class='icon icon-#{className}'></i>")
+    content
+
+  reg: (string) ->
+    new RegExp(string.replace(/([.*+?^=!:${}()|\[\]\/\\])/g, "\\$1"), 'g')
 
   ## MOVING
   start: (ev) =>

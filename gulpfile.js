@@ -14,6 +14,7 @@ var paths = {
     scripts: ['src/javascripts/**/*.coffee'],
     vendorScripts: ['src/javascripts/vendor/**/*.js'],
     styles: ['src/css/**/*.scss'],
+    fonts: ['src/fonts/*'],
     images: 'src/images/**/*',
     html: 'src/html/**/*.html'
 };
@@ -22,6 +23,7 @@ var dest = {
     root: 'public',
     css: 'public/css',
     js: 'public/js',
+    fonts: 'public/fonts',
     imgs: 'public/img'
 };
 
@@ -66,6 +68,11 @@ gulp.task('sass',  function() {
         .pipe(gulp.dest(dest.css));
 });
 
+gulp.task('fonts', function(){
+    return gulp.src(paths.fonts)
+        .pipe(gulp.dest(dest.fonts));
+});
+
 gulp.task('html', function(){
    return gulp.src(paths.html)
        .pipe(gulp.dest(dest.root));
@@ -77,10 +84,11 @@ gulp.task('watch', function() {
     gulp.watch(paths.vendorScripts, ['vendorScripts']);
     gulp.watch(paths.images, ['images']);
     gulp.watch(paths.styles, ['sass']);
+    gulp.watch(paths.fonts, ['fonts']);
     gulp.watch(paths.html, ['html']);
 });
 
 // The default task (called when you run `gulp` from cli)
 gulp.task('default', ['clean'], function(){
-    gulp.start(['watch','vendorScripts', 'scripts', 'images', 'sass', 'html']);
+    gulp.start(['watch','vendorScripts', 'scripts', 'images', 'fonts', 'sass', 'html']);
 });
