@@ -32,8 +32,17 @@ body{
   background: white;
 }
 
+footer{
+  padding-top: 20px;
+  margin-top: 40px;
+  border-top: 1px solid lightgrey;
+  font-size: 12px;
+  padding-bottom: 20px;
+}
+
 
 .card {
+  width: 312px;
   position: relative;
   img{
     cursor: move;
@@ -83,6 +92,11 @@ body{
     &.i5{ width: 85px;}
   }
 
+  &.back {
+    .name, .price, .strength, .type, .influence, .mu,.main-content{
+      display: none;
+    }
+  }
 
   &.agenda{
     .price, .strength {

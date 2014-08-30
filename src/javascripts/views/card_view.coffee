@@ -30,6 +30,7 @@ class App.Views.CardView extends Backbone.View
   render: =>
     @$el.removeClass()
     @$el.addClass(@className)
+    @$el.addClass('back') unless @model.get('kind')
     @$el.addClass(@model.get('kind'))
     @$el.addClass(@model.get('faction'))
     imgView = @$el.find('img')
