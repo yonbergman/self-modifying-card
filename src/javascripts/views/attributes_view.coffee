@@ -47,7 +47,7 @@ class App.Views.AttributesView extends Backbone.View
     </div>
   </div>
   <div class="form-group">
-    <label for="text" class="col-sm-3 control-label">Text:</label>
+    <label for="text" class="col-sm-3 control-label">Text: <i class="text-help glyphicon glyphicon-question-sign"></i></label>
     <div class="col-sm-9">
       <textarea id="text" class="form-control"/>
     </div>
@@ -82,6 +82,8 @@ class App.Views.AttributesView extends Backbone.View
     'change textare': 'updateContent'
     'keyup textarea': 'updateContent'
     'change .upload input': 'imageReady'
+    'focus #text': -> @$el.find('.text-help').popover('show')
+    'blur #text': -> @$el.find('.text-help').popover('hide')
 
   render: =>
     @$el.html(@template(@model.attributes))
@@ -91,6 +93,27 @@ class App.Views.AttributesView extends Backbone.View
     @$el.find('.strength').hide() unless @hasStrength()
     @$el.find('.mu').hide() unless @hasMU()
     @$el.find('.influence').hide() unless @model.hasInfluence()
+    @$el.find('.text-help').popover(
+      placement: 'left'
+      trigger: 'hover'
+      html: true
+      title: 'Adding Icons'
+      container: 'body'
+      content: """
+<p>You can add icons by using the following phrases</p>
+<dl class="dl-horizontal">
+  <dt><i class="icon icon-click"></i></dt><dd>[click]</dd>
+  <dt><i class="icon icon-credit"></i></dt><dd>[credit]</dd>
+  <dt><i class="icon icon-subroutine"></i></dt><dd>[sub] or --></dd>
+  <dt><i class="icon icon-recurring-credit"></i></dt><dd>[recurring]</dd>
+  <dt><i class="icon icon-trash"></i></dt><dd>[trash]</dd>
+  <dt><i class="icon icon-link"></i></dt><dd>[link]</dd>
+  <dt><i class="icon icon-mu"></i></dt><dd>[mu]</dd>
+  <dt><i class="icon icon-1mu"></i></dt><dd>[1mu]</dd>
+  <dt><i class="icon icon-2mu"></i></dt><dd>[2mu]</dd>
+</dl>
+      """
+    )
     @
 
   hasStrength: =>
