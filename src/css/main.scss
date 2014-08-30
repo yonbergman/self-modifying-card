@@ -66,6 +66,9 @@ body{
       font-size: 10px;
     }
   }
+  .mu{
+    display: none;
+  }
   .influence{
     background: url('/img/influence-pip.png');
     width: 88px;
@@ -303,6 +306,197 @@ body{
       transform: rotate(-90deg);
       bottom: 52px;
       left: 304px;
+    }
+  }
+
+  &.event{
+    .name{
+      top: 16px;
+      left: 69px;
+      font-weight: normal;
+    }
+    .price{
+      top: 33px;
+      left: 22px;
+      font-size: 20px;
+      text-align: center;
+      color: white;
+    }
+    .strength{
+      display: none;
+    }
+    .type{
+      top: 272px;
+      left: 85px;
+      font-weight: normal;
+      font-size: 16px;
+      text-align: left;
+    }
+    .main-content{
+      top: 304px;
+      left: 33px;
+      font-weight: normal;
+      text-align: left;
+    }
+    .influence{
+      transform-origin: bottom left;
+      transform: rotate(-90deg);
+      bottom: 49px;
+      left: 306px;
+    }
+  }
+
+  &.hardware{
+    .name{
+      top: 225px;
+      left: 62px;
+      font-weight: normal;
+    }
+    .price{
+      top: 35px;
+      left: 25px;
+      font-size: 20px;
+      text-align: center;
+      color: white;
+    }
+    .strength{
+      display: none;
+    }
+    .type{
+      top: 260px;
+      left: 124px;
+      font-weight: normal;
+      font-size: 14px;
+      text-align: left;
+    }
+    .main-content{
+      top: 291px;
+      left: 45px;
+      font-weight: normal;
+      text-align: left;
+    }
+    .influence{
+      transform-origin: bottom left;
+      transform: rotate(-90deg);
+      bottom: 47px;
+      left: 309px;
+    }
+  }
+
+  &.program{
+    .name{
+      top: 206px;
+      left: 18px;
+      font-weight: normal;
+    }
+    .price{
+      top: 34px;
+      left: 23px;
+      font-size: 20px;
+      text-align: center;
+      color: white;
+    }
+    .strength{
+      top: 403px;
+      left: 20px;
+      font-weight: bold;
+      font-size: 24px;
+    }
+    .type{
+      top: 235px;
+      left: 100px;
+      font-weight: normal;
+      font-size: 14px;
+      text-align: left;
+    }
+    .main-content{
+      top: 266px;
+      left: 32px;
+      font-weight: normal;
+      text-align: left;
+    }
+    .influence{
+      transform-origin: bottom left;
+      transform: rotate(-90deg);
+      bottom: 47px;
+      left: 305px;
+    }
+    .mu{
+      top: 22px;
+      left: 79px;
+      display: block;
+      font-size: 12px;
+      color: white;
+      z-index: 2;
+      text-align: center;
+      width: 13px;
+      &.shadow{
+        visibility: visible;
+        text-shadow: none;
+        color: black;
+        z-index: 1;
+        &.top{
+          margin-top: -1px;
+        }
+        &.left{
+          margin-left: -1px;
+        }
+        &.right{
+          margin-left: 1px;
+        }
+        &.bottom{
+          margin-top: 1px;
+        }
+      }
+    }
+    &.shaper{
+      .mu{
+        top: 20px;
+
+      }
+    }
+    &.anarch{
+      .mu{
+        top: 20px;
+        left: 78px;
+      }
+    }
+  }
+
+  &.resource{
+    .name{
+      top: 15px;
+      left: 72px;
+      font-weight: normal;
+    }
+    .price{
+      top: 32px;
+      left: 23px;
+      font-size: 20px;
+      text-align: center;
+      color: white;
+    }
+    .strength{
+      display: none;
+    }
+    .type{
+      top: 214px;
+      left: 98px;
+      font-weight: normal;
+      font-size: 14px;
+      text-align: left;
+    }
+    .main-content{
+      top: 248px;
+      left: 20px;
+      font-weight: normal;
+      text-align: left;
+    }
+    .influence{
+      transform-origin: bottom left;
+      transform: rotate(-90deg);
+      bottom: 49px;
+      left: 306px;
     }
   }
 

@@ -1,13 +1,16 @@
 class App.Models.Card extends Backbone.Model
   defaults:
-    side: 'corp'
+#    side: 'corp'
+    side: 'runner'
     faction: 'neutral'
-    kind: 'agenda'
+#    kind: 'agenda'
+    kind: 'program'
     unique: false
     name: 'Sample Card'
     price: '3'
     strength: '2'
     influence: 2
+    mu: 1
     type: 'strong - stealth'
     text: 'If Snare! is accessed from R&D, the Runner must reveal it.'
     fluff: 'It\'s bite is worse than it\'s bark'
@@ -26,6 +29,16 @@ class App.Models.Card extends Backbone.Model
     asset: 'Trash Cost'
     upgrade: 'Trash Cost'
     ice: 'Strength'
+    program: 'Strength'
+
+  initialize: ->
+    @on('change:side', @resetFactionKind)
+
+  resetFactionKind: ->
+    if @isRunner()
+      @set(kind: 'program', faction: 'shaper')
+    else
+      @set(kind: 'ice', faction: 'jinteki')
 
   isRunner: ->
     @get('side') == 'runner'

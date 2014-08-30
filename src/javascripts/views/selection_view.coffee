@@ -1,10 +1,19 @@
 class App.Views.SelectionView extends Backbone.View
   className: 'selection'
-  template: _.template("<label><%= attribute %>:</label><ul class='nav nav-pills nav-justified'></ul>")
-  singleTemplate: _.template("<li><a href='javascript:;'><%= text %></a></li>")
+  template: _.template("""
+<div class="form-group">
+<label for="<%= attribute %>" class="col-sm-3 control-label"><%= attribute %>:</label>
+  <div class="col-sm-9">
+    <select class="form-control" id="<%= attribute %>"></select>
+  </div>
+</div>
+""")
+  singleTemplate: _.template("""
+<option><%= text %></option>
+""")
 
   events:
-    "click li": "clicked"
+    "change select": "changed"
 
   initialize: (@options)->
     @updateSelections()
@@ -18,11 +27,9 @@ class App.Views.SelectionView extends Backbone.View
     for selection in @options.selections
       el = $(@singleTemplate(text: selection))
       el.data(value: selection)
-      el.addClass('active') if @model.get(@options.attribute) == selection
-      @$el.find('ul').append(el)
+      el.attr('selected', true) if @model.get(@options.attribute) == selection
+      @$el.find('select').append(el)
     @
 
-  clicked: (ev)->
-    selection = $(ev.target).closest('li').data('value')
-    @model.set(@options.attribute, selection)
-
+  changed: (ev)->
+    @model.set(@options.attribute, @$el.find('select').val())

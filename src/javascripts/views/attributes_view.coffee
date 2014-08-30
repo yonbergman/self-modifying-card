@@ -1,8 +1,6 @@
 class App.Views.AttributesView extends Backbone.View
   className: 'attributes'
   template: _.template("""
-<form class="form-horizontal" role="form">
-  <br/>
   <div class="form-group">
     <label for="name" class="col-sm-3 control-label">Name:</label>
     <div class="col-sm-9">
@@ -36,6 +34,12 @@ class App.Views.AttributesView extends Backbone.View
       <input type="number" class="form-control" id="price" placeholder="Cost">
     </div>
   </div>
+  <div class="form-group mu">
+    <label for="mu" class="col-sm-3 control-label">MU:</label>
+    <div class="col-sm-5">
+      <input type="number" class="form-control" id="mu" placeholder="MU">
+    </div>
+  </div>
   <div class="form-group strength">
     <label for="strength" class="col-sm-3 control-label"><%= App.Models.Card.strengthMeaning[kind]%>:</label>
     <div class="col-sm-5">
@@ -67,7 +71,6 @@ class App.Views.AttributesView extends Backbone.View
       <input type="text" class="form-control" id="img" placeholder="Image from Web">
     </div>
   </div>
-</form>
 """)
 
   initialize: (@options)->
@@ -86,11 +89,14 @@ class App.Views.AttributesView extends Backbone.View
       $(el).val(@model.get(el.id))
     @$el.find('#unique').prop('checked', @model.get('unique'))
     @$el.find('.strength').hide() unless @hasStrength()
+    @$el.find('.mu').hide() unless @hasMU()
     @$el.find('.influence').hide() unless @model.hasInfluence()
     @
 
   hasStrength: =>
     App.Models.Card.strengthMeaning[@model.get('kind')]
+  hasMU: =>
+    @model.get('kind')=='program'
 
   updateContent: (ev) =>
     el = $(ev.target)

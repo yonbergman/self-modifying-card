@@ -38,7 +38,7 @@ class App.Views.CardView extends Backbone.View
       imgView.css('background-image': "url(#{@model.get('img')})")
     imgView.css('background-position': "#{@model.get('x')}px #{@model.get('y')}px")
     imgView.css('background-size': "#{@model.get('scale')*100}%")
-    for attr in ['name', 'price', 'strength', 'type', 'text', 'fluff']
+    for attr in ['name', 'price', 'strength', 'type', 'text', 'fluff','mu']
       @$el.find(".#{attr}").text(@model.get(attr))
 
     @$el.find('.name').text('◆ ' + @model.get('name')) if @model.isUnique()
