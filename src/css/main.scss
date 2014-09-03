@@ -26,6 +26,7 @@
 html, body{
   margin: 0;
   padding: 0;
+  min-height: 100%;
 }
 
 body{
@@ -37,7 +38,8 @@ footer{
   margin-top: 40px;
   border-top: 1px solid lightgrey;
   font-size: 12px;
-  padding-bottom: 20px;
+  padding-bottom: 40px;
+  position: relative;
 }
 
 
