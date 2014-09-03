@@ -8,6 +8,7 @@ var del = require('del');
 var sass = require('gulp-ruby-sass');
 var rimraf = require('rimraf');
 var clean = require('gulp-clean');
+var plumber = require('gulp-plumber');
 
 
 var paths = {
@@ -41,7 +42,8 @@ gulp.task('scripts', function() {
     // with sourcemaps all the way down
     return gulp.src(paths.scripts)
         .pipe(sourcemaps.init())
-        .pipe(coffee())
+        .pipe(plumber())
+        .pipe(coffee({bare: true}))
         .pipe(uglify())
         .pipe(concat('all.min.js'))
         .pipe(sourcemaps.write())
@@ -65,6 +67,7 @@ gulp.task('images', function() {
 gulp.task('sass',  function() {
     return gulp.src(paths.styles)
         .pipe(sass())
+        .on('error', function (err) { console.log(err.message); })
         .pipe(gulp.dest(dest.css));
 });
 
