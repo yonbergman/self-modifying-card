@@ -61,7 +61,7 @@ class App.Views.AttributesView extends Backbone.View
   <div class="form-group upload">
     <label for="image" class="col-sm-3 control-label">Image:</label>
     <div class="col-sm-9">
-      <input type="file" id="image' class='form-control">
+      <input type="file" id="image" class='form-control'>
     </div>
   </div>
   <div class="col-sm-9 col-sm-offset-3"><p>For a great source of images that fit the Netrunner theme check out <a href="https://www.facebook.com/threyda/photos_stream" target="_blank">Thredya</a></a></p></div>
@@ -82,7 +82,8 @@ class App.Views.AttributesView extends Backbone.View
   render: =>
     @$el.html(@template(@model.attributes))
     @$el.find("input, textarea").each (idx, el) =>
-      $(el).val(@model.get(el.id))
+      unless el.id == 'image'
+        $(el).val(@model.get(el.id))
     @$el.find('#unique').prop('checked', @model.get('unique'))
     @$el.find('.strength').hide() unless @hasStrength()
     @$el.find('.mu').hide() unless @hasMU()
