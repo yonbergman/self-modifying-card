@@ -14,9 +14,9 @@ class App.Models.Card extends Backbone.Model
     text: "If you pay 2 [c] when the Runner accesses Mokujin,the runner must take Mokujin.\nWhile the runner has Mokujin he can't run on central servers.\n[click] [click] [click]: Trash Mokujin"
     fluff: '"I was completely stumped" - Whizzard'
 
-    y: 272
-    scale: 2.5
-    img: "https://scontent-b-lhr.xx.fbcdn.net/hphotos-xpf1/v/t1.0-9/p235x350/10516676_10152217464281010_8925684994098200246_n.jpg?oh=8d345c197e82f74a375b5c79ac04461a&oe=545D9E1D"
+#    y: 272
+#    scale: 2.5
+#    img: "https://scontent-b-lhr.xx.fbcdn.net/hphotos-xpf1/v/t1.0-9/p235x350/10516676_10152217464281010_8925684994098200246_n.jpg?oh=8d345c197e82f74a375b5c79ac04461a&oe=545D9E1D"
 
   options:
     side: ['corp', 'runner']

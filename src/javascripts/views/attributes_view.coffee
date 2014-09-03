@@ -58,17 +58,10 @@ class App.Views.AttributesView extends Backbone.View
       <textarea id="fluff" class="form-control"/>
     </div>
   </div>
-  <hr/>
   <div class="form-group upload">
     <label for="image" class="col-sm-3 control-label">Image:</label>
     <div class="col-sm-9">
       <input type="file" id="image' class='form-control">
-    </div>
-  </div>
-  <div class="form-group fileurl">
-    <label for="imageurl" class="col-sm-3 control-label">Image From URL:</label>
-    <div class="col-sm-9">
-      <input type="text" class="form-control" id="img" placeholder="Image from Web">
     </div>
   </div>
 """)

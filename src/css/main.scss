@@ -44,10 +44,10 @@ footer{
 .card {
   width: 312px;
   position: relative;
+  margin-bottom: 10px;
   img {
     cursor: move;
     background: black;
-    //    background-image: url('https://scontent-b-lhr.xx.fbcdn.net/hphotos-xpf1/v/t1.0-9/p235x350/10516676_10152217464281010_8925684994098200246_n.jpg?oh=8d345c197e82f74a375b5c79ac04461a&oe=545D9E1D');
   }
   > div{
     position: absolute;
@@ -139,10 +139,10 @@ footer{
       text-align: center;
     }
     .type{
-      top: 279px;
+      top: 281px;
       left: 95px;
       font-weight: normal;
-      font-size: 16px;
+      font-size: 13px;
       text-align: left;
     }
     .main-content{
@@ -180,10 +180,10 @@ footer{
       display: none;
     }
     .type{
-      top: 259px;
+      top: 261px;
       left: 114px;
       font-weight: normal;
-      font-size: 16px;
+      font-size: 13px;
       text-align: left;
     }
     .main-content{
@@ -218,10 +218,10 @@ footer{
       @include trash();
     }
     .type{
-      top: 254px;
+      top: 257px;
       left: 107px;
       font-weight: normal;
-      font-size: 16px;
+      font-size: 13px;
       text-align: left;
     }
     .main-content{
@@ -235,7 +235,6 @@ footer{
       left: 44px;
     }
   }
-
 
   &.asset{
     .name{
@@ -257,10 +256,10 @@ footer{
       @include trash();
     }
     .type{
-      top: 250px;
-      left: 89px;
+      top: 253px;
+      left: 85px;
       font-weight: normal;
-      font-size: 16px;
+      font-size: 13px;
       text-align: left;
     }
     .main-content{
@@ -298,13 +297,13 @@ footer{
     .type{
       text-align: right;
       font-weight: normal;
-      font-size: 16px;
+      font-size: 13px;
       top: 81px;
-      left: 16px;
+      left: 19px;
       transform-origin: top right;
       transform: translate(-100%,0) rotate(-90deg);
       background-image: url('/img/ice.png');
-      background-position: 0 -7px;
+      background-position: 0 -10px;
       background-repeat: no-repeat;
       padding-left: 46px;
     }
@@ -340,10 +339,10 @@ footer{
       display: none;
     }
     .type{
-      top: 272px;
+      top: 275px;
       left: 85px;
       font-weight: normal;
-      font-size: 16px;
+      font-size: 13px;
       text-align: left;
     }
     .main-content{
@@ -377,10 +376,10 @@ footer{
       display: none;
     }
     .type{
-      top: 260px;
+      top: 261px;
       left: 124px;
       font-weight: normal;
-      font-size: 14px;
+      font-size: 13px;
       text-align: left;
     }
     .main-content{
@@ -417,10 +416,10 @@ footer{
       font-size: 24px;
     }
     .type{
-      top: 235px;
+      top: 236px;
       left: 100px;
       font-weight: normal;
-      font-size: 14px;
+      font-size: 13px;
       text-align: left;
     }
     .main-content{
@@ -494,10 +493,10 @@ footer{
       display: none;
     }
     .type{
-      top: 214px;
+      top: 215px;
       left: 98px;
       font-weight: normal;
-      font-size: 14px;
+      font-size: 13px;
       text-align: left;
     }
     .main-content{
