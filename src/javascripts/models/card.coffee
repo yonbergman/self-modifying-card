@@ -34,11 +34,9 @@ class App.Models.Card extends Backbone.Model
     ice: 'Strength'
     program: 'Strength'
 
-  initialize: ->
-    @on('change:side', @resetFactionKind)
 
   resetFactionKind: ->
-    @set(kind: '', faction: '')
+    @set(kind: (if @isRunner() then 'event' else 'agenda'), faction: 'neutral')
 
   isRunner: ->
     @get('side') == 'runner'

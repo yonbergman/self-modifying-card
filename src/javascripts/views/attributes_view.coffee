@@ -113,6 +113,7 @@ class App.Views.AttributesView extends Backbone.View
 
   hasStrength: =>
     App.Models.Card.strengthMeaning[@model.get('kind')]
+
   hasMU: =>
     @model.get('kind')=='program'
 

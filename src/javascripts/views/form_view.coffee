@@ -3,7 +3,7 @@ class App.Views.FormView extends Backbone.View
 
   initialize: ->
     @sections = [
-      new App.Views.SelectionView(model: @model, attribute: 'side')
+      new App.Views.ChangeSideView(model: @model, attribute: 'side')
       new App.Views.SideSelectionView(model: @model, attribute: 'faction')
       new App.Views.SideSelectionView(model: @model, attribute: 'kind')
 #      new App.Views.SimpleAttributeView(model: @model, attribute: 'name')

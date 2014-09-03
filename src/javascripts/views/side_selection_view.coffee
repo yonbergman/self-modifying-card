@@ -1,4 +1,4 @@
-class App.Views.SideSelectionView extends App.Views.SelectionView
+class App.Views.SideSelectionView extends App.Views.AbstractSelectionView
 
   initialize: (@options)->
     super

@@ -1,4 +1,4 @@
-class App.Views.SelectionView extends Backbone.View
+class App.Views.AbstractSelectionView extends Backbone.View
   className: 'selection'
   template: _.template("""
 <div class="form-group">

@@ -15,6 +15,7 @@ class App.Views.SaveImageView extends Backbone.View
 
   ## RENDER IMAGE
   generateImage: (ev) =>
+    @model.save()
     html2canvas @$el.find('.card'),
       allowTaint: true
       onrendered: (canvas) =>
