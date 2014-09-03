@@ -7,7 +7,6 @@ class App.Controllers.CardBuilder
     @history.fetch
       success: =>
         lastModel = @history.last()
-        console.log(@history.length, lastModel.attributes)
         if lastModel
           @model.set(lastModel.attributes)
     @formView = new App.Views.FormView(model: @model)
