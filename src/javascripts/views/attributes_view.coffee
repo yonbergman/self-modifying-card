@@ -64,6 +64,7 @@ class App.Views.AttributesView extends Backbone.View
       <input type="file" id="image' class='form-control">
     </div>
   </div>
+  <div class="col-sm-9 col-sm-offset-3"><p>For a great source of images that fit the Netrunner theme check out <a href="https://www.facebook.com/threyda/photos_stream" target="_blank">Thredya</a></a></p></div>
 """)
 
   initialize: (@options)->
