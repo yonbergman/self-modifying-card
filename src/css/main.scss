@@ -189,7 +189,7 @@ footer{
       text-align: left;
     }
     .main-content{
-      top: 293px;
+      top: 291px;
       left: 33px;
       font-weight: normal;
       text-align: left;
@@ -197,6 +197,44 @@ footer{
     .influence{
       bottom: 14px;
       left: 45px;
+    }
+    &.haas{
+      .influence{
+        bottom: 16px;
+        left: 47px;
+      }
+      .price{
+        top: 33px;
+        left: 25px;
+      }
+    }
+    &.nbn{
+      .influence{
+        bottom: 15px;
+        left: 47px;
+      }
+      .price{
+        top: 33px;
+      }
+    }
+    &.jinteki{
+      .influence{
+        bottom: 15px;
+        left: 50px;
+      }
+      .price{
+        top: 32px;
+      }
+    }
+    &.weyland{
+      .price{
+        top: 31px;
+        left: 24px;
+      }
+      .influence{
+        bottom: 17px;
+        left: 50px;
+      }
     }
   }
 
@@ -273,6 +311,26 @@ footer{
     .influence{
       bottom: 16px;
       left: 44px;
+    }
+    &.haas{
+      .influence{
+        left: 49px;
+      }
+    }
+    &.jinteki{
+      .influence{
+        left: 49px;
+      }
+    }
+    &.nbn{
+      .influence{
+        left: 49px;
+      }
+    }
+    &.weyland{
+      .influence{
+        left: 47px;
+      }
     }
   }
 
@@ -467,13 +525,20 @@ footer{
     &.shaper{
       .mu{
         top: 20px;
-
+      }
+      .price{
+        top: 32px;
+        left: 22px;
       }
     }
     &.anarch{
       .mu{
         top: 20px;
         left: 78px;
+      }
+      .price{
+        top: 32px;
+        left: 22px;
       }
     }
   }
@@ -512,6 +577,25 @@ footer{
       transform: rotate(-90deg);
       bottom: 49px;
       left: 306px;
+    }
+    &.shaper{
+      .price{
+        top: 33px;
+      }
+    }
+    &.anarch{
+      .price{
+        top: 32px;
+      }
+      .influence{
+        bottom: 47px;
+      }
+    }
+    &.criminal{
+      .influence{
+        bottom: 51px;
+        left: 307px;
+      }
     }
   }
 
