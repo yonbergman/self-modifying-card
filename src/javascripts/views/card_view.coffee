@@ -47,6 +47,10 @@ class App.Views.CardView extends Backbone.View
     @$el.find(".text").html(@iconify(content))
     @$el.find('.influence').removeClass().addClass('influence').addClass("i#{@model.get('influence')}")
 
+    ga('send', 'event', 'card-render', 'name', @model.get('name'));
+    ga('send', 'event', 'card-render', 'kind', model.get('kind'));
+    ga('send', 'event', 'card-render', 'faction', model.get('faction'));
+
   iconify: (content) =>
     for className, finders of @icons
       for finder in finders
