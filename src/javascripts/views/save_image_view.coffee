@@ -7,10 +7,15 @@ class App.Views.SaveImageView extends Backbone.View
 
   initialize: ->
     @ui =
+      genButton: @$el.find('button')
       saveButton: @$el.find('a')
-    @model.on('change', @resetSaveButton)
+    @model.on('change', @resetButton)
 
-  resetSaveButton: =>
+  resetButton: =>
+    if @model.isNeutralIdentity()
+      @ui.genButton.addClass('disabled')
+    else
+      @ui.genButton.removeClass('disabled')
     @ui.saveButton.addClass('disabled').attr(href: null)
 
   ## RENDER IMAGE

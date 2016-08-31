@@ -55,14 +55,14 @@ footer{
     position: absolute;
   }
 
-  .price, .strength{
+  .price, .strength, .link, .min-deck, .max-influence {
     @include numbers();
     width: 27px;
     &.shadow{
       visibility: hidden;
     }
   }
-  .name {
+  .name, .subtitle {
     @include title();
   }
   .type{
@@ -77,7 +77,7 @@ footer{
       font-size: 10px;
     }
   }
-  .mu{
+  .mu, .link, .min-deck, .max-influence, .subtitle {
     display: none;
   }
   .influence{
@@ -599,6 +599,103 @@ footer{
     }
   }
 
+  &.identity {
+    .influence, .strength, .price {
+      display: none;
+    }
+    .name {
+      font-weight: normal;
+    }
+    .subtitle {
+      font-weight: normal;
+      display: block;
+    }
+    .type {
+      font-weight: normal;
+      font-size: 13px;
+      text-align: left;
+    }
+    .main-content {
+      top: 356px;
+      font-weight: normal;
+      text-align: left;
+    }
+    .min-deck {
+      text-shadow: 2px 2px white;
+      top: 388px;
+      font-weight: bold;
+      font-size: 15px;
+      text-align: center;
+      display: block;
+    }
+    .max-influence {
+      text-shadow: 2px 2px black;
+      top: 413px;
+      font-weight: bold;
+      font-size: 15px;
+      color: white;
+      text-align: center;
+      display: block;
+    }
+    &.anarch, &.criminal, &.shaper {
+      .name {
+        top: 15px;
+        left: 108px;
+      }
+      .subtitle {
+        top: 40px;
+        left: 150px;
+        font-size: 9px;
+      }
+      .type {
+        top: 328px;
+        left: 115px;
+      }
+      .main-content {
+        left: 55px;
+      }
+      .link {
+        top: 26px;
+        left: 18px;
+        font-size: 24px;
+        font-weight: normal;
+        text-align: center;
+        color: white;
+        display: block;
+      }
+      .min-deck {
+        left: 267px;
+      }
+      .max-influence {
+        left: 267px;
+      }
+    }
+    &.haas, &.weyland, &.jinteki, &.nbn {
+      .name {
+        top: 23px;
+        left: 60px;
+        font-size: 18px;
+      }
+      .subtitle {
+        top: 53px;
+        left: 24px;
+        font-size: 11px;
+      }
+      .type {
+        top: 329px;
+        left: 107px;
+      }
+      .main-content {
+        left: 65px;
+      }
+      .min-deck {
+        left: 17px;
+      }
+      .max-influence {
+        left: 17px;
+      }
+    }
+  }
 }
 pre{
   padding: 0;

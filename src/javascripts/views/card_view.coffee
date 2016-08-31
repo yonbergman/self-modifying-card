@@ -31,6 +31,12 @@ class App.Views.CardView extends Backbone.View
     @$el.removeClass()
     @$el.addClass(@className)
     @$el.addClass('back') unless @model.get('kind')
+
+    if @model.isNeutralIdentity()
+      @$el.hide()
+      return
+
+    @$el.show()
     @$el.addClass(@model.get('kind'))
     @$el.addClass(@model.get('faction'))
     imgView = @$el.find('img')
@@ -39,7 +45,7 @@ class App.Views.CardView extends Backbone.View
       imgView.css('background-image': "url(#{@model.get('img')})")
     imgView.css('background-position': "#{@model.get('x')}px #{@model.get('y')}px")
     imgView.css('background-size': "#{@model.get('scale')*100}%")
-    for attr in ['name', 'price', 'strength', 'type', 'text', 'fluff','mu']
+    for attr in ['name', 'subtitle', 'price', 'strength', 'type', 'text', 'fluff', 'mu', 'link', 'min-deck', 'max-influence']
       @$el.find(".#{attr}").text(@model.get(attr))
 
     @$el.find('.name').text('◆ ' + @model.get('name')) if @model.isUnique()
