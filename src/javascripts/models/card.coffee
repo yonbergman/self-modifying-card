@@ -24,8 +24,8 @@ class App.Models.Card extends Backbone.Model
       corp: ['neutral', 'weyland', 'haas', 'jinteki', 'nbn'],
       runner: ['neutral', 'anarch', 'criminal', 'shaper'],
     kind:
-      corp: ['agenda', 'asset', 'operation', 'upgrade', 'ice'],
-      runner: ['event', 'hardware', 'program', 'resource'],
+      corp: ['agenda', 'asset', 'operation', 'upgrade', 'ice', 'identity'],
+      runner: ['event', 'hardware', 'program', 'resource', 'identity'],
 
   @strengthMeaning:
     agenda: 'Agenda Points'
@@ -41,11 +41,14 @@ class App.Models.Card extends Backbone.Model
   isRunner: ->
     @get('side') == 'runner'
 
+  isNeutralIdentity: ->
+    @get('kind') == 'identity' and @get('faction') == 'neutral'
+
   isUnique: ->
     !!@get('unique')
 
   hasInfluence: ->
-    @get('kind')!='agenda' or @get('faction') == 'neutral'
+    @get('kind')!='identity' and (@get('kind')!='agenda' or @get('faction') == 'neutral')
 
   image: ->
     if @get('kind')

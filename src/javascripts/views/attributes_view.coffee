@@ -7,6 +7,12 @@ class App.Views.AttributesView extends Backbone.View
       <input type="text" class="form-control" id="name" placeholder="Name">
     </div>
   </div>
+  <div class="form-group subtitle">
+    <label for="subtitle" class="col-sm-3 control-label">Subtitle:</label>
+    <div class="col-sm-9">
+      <input type="text" class="form-control" id="subtitle" placeholder="Subtitle">
+    </div>
+  </div>
   <div class="form-group">
     <div class="col-sm-9 col-sm-offset-3">
       <div class="checkbox">
@@ -28,10 +34,28 @@ class App.Views.AttributesView extends Backbone.View
       <input type="text" class="form-control" id="type" placeholder="Type">
     </div>
   </div>
-  <div class="form-group">
+  <div class="form-group price">
     <label for="price" class="col-sm-3 control-label">Cost:</label>
     <div class="col-sm-5">
       <input type="number" class="form-control" id="price" placeholder="Cost">
+    </div>
+  </div>
+  <div class="form-group link">
+    <label for="link" class="col-sm-3 control-label">Link:</label>
+    <div class="col-sm-5">
+      <input type="number" class="form-control" id="link" placeholder="">
+    </div>
+  </div>
+  <div class="form-group min-deck">
+    <label for="min-deck" class="col-sm-3 control-label">Minimum Deck Size:</label>
+    <div class="col-sm-5">
+      <input type="number" class="form-control" id="min-deck" placeholder="">
+    </div>
+  </div>
+  <div class="form-group max-influence">
+    <label for="max-influence" class="col-sm-3 control-label">Maximum Influence:</label>
+    <div class="col-sm-5">
+      <input type="number" class="form-control" id="max-influence" placeholder="">
     </div>
   </div>
   <div class="form-group mu">
@@ -85,7 +109,12 @@ class App.Views.AttributesView extends Backbone.View
       unless el.id == 'image'
         $(el).val(@model.get(el.id))
     @$el.find('#unique').prop('checked', @model.get('unique'))
+    @$el.find('.subtitle').hide() unless @isIdentity()
     @$el.find('.strength').hide() unless @hasStrength()
+    @$el.find('.price').hide() unless !@isIdentity()
+    @$el.find('.link').hide() unless @isIdentity() and @model.isRunner()
+    @$el.find('.min-deck').hide() unless @isIdentity()
+    @$el.find('.max-influence').hide() unless @isIdentity()
     @$el.find('.mu').hide() unless @hasMU()
     @$el.find('.influence').hide() unless @model.hasInfluence()
     @$el.find('.text-help').popover(
@@ -116,6 +145,9 @@ class App.Views.AttributesView extends Backbone.View
 
   hasMU: =>
     @model.get('kind')=='program'
+
+  isIdentity: =>
+    @model.get('kind')=='identity'
 
   updateContent: (ev) =>
     el = $(ev.target)
